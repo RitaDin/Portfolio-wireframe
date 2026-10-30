@@ -1020,5 +1020,85 @@ header nav a:focus-visible {
     outline-offset: 3px;
 }
 
+/* ===== R.D LOGO SIZE ===== */
+
+header .logo {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+header .logo img {
+    width: 130px;
+    height: auto;
+    display: block;
+    object-fit: contain;
+
+    transition: transform 0.3s ease,
+                filter 0.3s ease;
+}
+
+header .logo:hover img {
+    transform: scale(1.08);
+    filter: drop-shadow(0 0 12px #a855f7);
+}
+
+@media (max-width: 768px) {
+    header .logo img {
+        width: 90px;
+    }
+}
+@media (max-width: 480px) {
+    header .logo img {
+        width: 75px;
+    }
+
+/* ===== MOBILE HOME PAGE FIX ===== */
+
+@media (max-width: 768px) {
+
+    /* Keep hero text below navigation */
+    .hero-text {
+        transform: none;
+        width: 100%;
+        text-align: left;
+    }
+
+    /* Arrange content vertically */
+    .hero {
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 30px;
+        padding: 30px 20px 45px;
+        min-height: 0;
+    }
+
+    /* Responsive heading */
+    .hero h1 {
+        font-size: clamp(32px, 9vw, 42px);
+    }
+
+    /* Keep photo close to text */
+    .hero-photo {
+        width: min(300px, 85vw);
+        height: 390px;
+        margin: 0;
+    }
+
+    /* Keep navigation in its own space */
+    header {
+        height: auto;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    header nav {
+        width: 100%;
+        gap: 10px;
+    }
+}
+
+}
 
 
